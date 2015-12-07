@@ -1,0 +1,26 @@
+Super hero: Avengers, tt0848228, keywords plays a big part and super hero other than the avengers(spader man, x-man) are also in the list 
+
+Mystery and drama: Seven, tt0114369
+                   The Curious Case of Benjamin Button, tt0421715
+               	   Both David Fincher mystery and drama, Seven recommendes serial killing and rouge cop, and Button finds romantic drama/fantasy 
+
+Apocalyptic: King Kong, tt0360717 
+             Gravity, tt1454468
+             Both have Vionel Theme contribution.
+             For King Kong the added forest feature finds more advanture in same scene(Jurassic park and world)
+             For Gravity, keyword space and brightness also became a factor.
+
+Arty-farty: Manhattan, tt0079522
+            Vicky Cristina Barcelona, tt0497465
+            Both Woody Allen dialogue centric romance/comedy, so a lot of woody allen films are recommended.
+            But Vicky Cristina Barcelona has more features to match so other directors are also in the list.
+
+Love story: Love actually, tt0314331
+			Begin again, tt1980929
+			For Love actually, good recommendation based on remantic comdey genre and feel good romance theme.
+			The added features for Begin again like location and scene make genre less important and the system shows more serendipity.
+
+Low attention: All-hat, tt0903131
+			   Ida, tt2718492
+			   Extreemly different to recommend due to the lack of information around the film(less famous casts and director) or too few people has viewed the content.
+			   Scene information can be of great help to recommend movie, a open_country scene point to a western film style and RGB feature explains the color choice of the dirctor.
