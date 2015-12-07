@@ -6,7 +6,7 @@ rabbit = RabbitProducer('weilun_movies_with_multiple_credit')
 movie_path = open("video_files_for_computing.txt")
 movies = json.load(movie_path)
 
-
+#use set operation to get the difference of lists since order in a list is not important
 all_movie_set = set(movies.keys())
 
 counter = 0
