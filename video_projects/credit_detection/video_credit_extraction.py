@@ -51,7 +51,7 @@ class FrameHistCalculater(object):
 		# print credit_buffer
 		return credit_buffer
 
-	def main():
+def main():
 	# list of boxer movies and their path
 	list_of_movie_path = open('video_files_for_computing.txt', 'r')
 	movies = json.load(list_of_movie_path)

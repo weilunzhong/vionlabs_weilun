@@ -14,7 +14,7 @@ input_video_path ='/mnt/databucket/movie_research/videofiles2/tt0303933/Drumline
 subtitle_path = '/mnt/databucket/movie_research/videofiles2/tt0303933/Drumline (2002)/Drumline.2002.720p.BrRip.x264.YIFY.srt'
 """
 
-input_video_path = "/mnt/movies03/boxer_movies/tt0206917/The Man Who Cried (2000).mp4"
+input_video_path = "/mnt/movies03/boxer_movies/tt0107665/Needful Things (1993)(Stephen King)DVDRip NL subs[Divx]NLtoppers/Needful Things (1993)(Stephen King)DVDRip NL subs[Divx]NLtoppers.avi"
 subtitle_path = None
 
 
