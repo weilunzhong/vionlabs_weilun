@@ -14,7 +14,7 @@ input_video_path ='/mnt/databucket/movie_research/videofiles2/tt0303933/Drumline
 subtitle_path = '/mnt/databucket/movie_research/videofiles2/tt0303933/Drumline (2002)/Drumline.2002.720p.BrRip.x264.YIFY.srt'
 """
 
-input_video_path = "/mnt/movies03/boxer_movies/tt0274166/Johnny English  (2003) 1080p x264 DD5.1 EN NL Subs [Asian torrenz]/Johhny English 2003 1080p.mkv"
+input_video_path = "/mnt/movies03/boxer_movies/tt1523483/[www.tnttorrent.info] Kaboom 2010 [DVDRip.XviD-miguel] [Ekipa TnT]/Kaboom 2010 [DVDRip.XviD-miguel] [ENG].avi"
 subtitle_path = None
 
 

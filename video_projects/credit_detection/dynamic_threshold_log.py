@@ -4,6 +4,16 @@ import re
 from scipy import interpolate
 import matplotlib.pyplot as plt 
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 
 class DynamicLogHandler(object):
 
@@ -50,7 +60,7 @@ class DynamicLogHandler(object):
 		min_ratio = np.amin(smoothed_hist)
 		interpolation_value = min_ratio + threshold * (max_ratio - min_ratio)
 		print max_ratio, min_ratio, interpolation_value
-		estimation_func = np.poly1d(np.polyfit(time_stamp, smoothed_hist, 10))
+		estimation_func = np.poly1d(np.polyfit(time_stamp, smoothed_hist, 7))
 		# flag_array = np.zeros(smoothed_hist.size)
 		self.estimation_func = estimation_func
 		index_array = np.where(estimation_func(time_stamp) > interpolation_value)
@@ -133,6 +143,9 @@ def test():
 		if credit_info["start_credit"] == 1:
 			continue
 		else:
+			print bcolors.WARNING + str(credit_info["video_path"]) + bcolors.ENDC
+			print bcolors.FAIL + str(credit_info["start_credit"]) + bcolors.ENDC
+			#print credit_info["video_path"], credit_info["start_credit"]
 			start_credit, end_credit = DLH.single_log_handler(credit_info["imdbID"])
 			plt.plot(DLH.time_stamp, DLH.estimation_func(DLH.time_stamp), '.',DLH.time_stamp, DLH.smoothed_hist, '-')
 			plt.draw()
@@ -140,10 +153,10 @@ def test():
 			# raw_input("<Hit Enter To Close>")
 			plt.close()
 	"""
-	start_credit, end_credit = DLH.single_log_handler("tt0274166")
+	start_credit, end_credit = DLH.single_log_handler("tt1523483")
 	plt.plot(DLH.time_stamp, DLH.estimation_func(DLH.time_stamp), '.',DLH.time_stamp, DLH.smoothed_hist, '-')
 	plt.show()
-
+	
 if __name__ == "__main__":
 	#main()
 	test()

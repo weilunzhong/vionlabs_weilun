@@ -9,6 +9,7 @@ class WeilunWorker(VionWorker):
 		video_path = json_dict['path']
 		imdbID = json_dict['imdbID']
 		start_credit = json_dict['start_credit']
+		print "-" * 10
 		# start_credit = 0
 		result = self.play_credit(video_path, start_credit)
 		print "this is the result: ", result
