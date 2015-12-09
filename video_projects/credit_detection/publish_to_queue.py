@@ -1,7 +1,7 @@
 import json
 from vionrabbit import *
 
-rabbit = RabbitProducer('weilun_movies_with_multiple_credit')
+rabbit = RabbitProducer('weilun_dynamic_multiple_credit')
 
 movie_path = open("video_files_for_computing.txt")
 movies = json.load(movie_path)
@@ -50,16 +50,25 @@ multiple_set = all_movie_set.difference(good_set)
 multiple_set = multiple_set.difference(none_set)
 
 multiple_id_list = list(multiple_set)
-
-
-
 print len(multiple_id_list)
 
-for ID in multiple_id_list:
+dynamic_dict = {}
+with open("credit_result/dynamic_credit_with_time.json") as dynamic_stapm:
+	for line in dynamic_stapm:
+		movie_json = json.loads(line)
+		if movie_json["imdbID"] in multiple_id_list:
+			dynamic_dict[movie_json["imdbID"]] = movie_json["start_credit"]
+
+
+
+
+print len(dynamic_dict.keys())
+
+for ID in dynamic_dict.keys():
 	message = {}
 	message["imdbID"] = ID
 	message["path"] = movies[ID]
+	message["start_credit"] = dynamic_dict[ID]
 	# print message
-	# message["start_credit"] = good_id_dict[ID]
 	rabbit.publish_dict(message)
 	
