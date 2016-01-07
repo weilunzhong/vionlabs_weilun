@@ -122,7 +122,7 @@ class LogHandler(object):
 def main():
 	sliding_window_size = 20
 	filter_ratio = 0.7
-	wait_time = 500
+	wait_time = 480
 	skip_frame = 20
 	log_folder = "credit_log/with_ratio_"
 	LH = LogHandler(log_folder, sliding_window_size, filter_ratio, wait_time, skip_frame)

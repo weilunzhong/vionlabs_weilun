@@ -27,8 +27,7 @@ def regression_approach():
 	W = tf.Variable(tf.zeros([784,10]), name="weights")
 	b = tf.Variable(tf.zeros([10]), name="bias")
 
-	# init vairables in a session
-	# sess.run(tf.initialize_all_variables())
+	# init vairables in a session	# sess.run(tf.initialize_all_variables())
 
 	# predictions
 	with tf.name_scope("prediction") as scope:
