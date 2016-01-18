@@ -14,10 +14,7 @@ class WeilunWorker(VionWorker):
 		result = self.play_credit(video_path, start_credit)
 		print "this is the result: ", result
 		print video_path
-		if result:
-			rabbit_right.publish_dict(json_dict)
-		else:
-			rabbit_wrong.publish_dict(json_dict)
+		if result:			rabbit_wrong.publish_dict(json_dict)
 		#raise ValueError
 
 	def play_credit(self, video_path, start_credit):
