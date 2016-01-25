@@ -72,6 +72,8 @@ def build_dataset(words):
   reverse_dictionary = dict(zip(dictionary.values(), dictionary.keys()))
   return data, count, dictionary, reverse_dictionary
 data, count, dictionary, reverse_dictionary = build_dataset(words)
+# Here the dict and reverse dict stores the 
+# pairwise word and index of the word.
 del words  # Hint to reduce memory.
 print('Most common words (+UNK)', count[:5])
 print('Sample data', data[:10])
