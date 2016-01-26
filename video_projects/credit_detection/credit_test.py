@@ -1,5 +1,5 @@
 from frame_hist_calculator import FrameHistCalculator
-from vionmodels.research import EndCredit
+#from vionmodels.research import EndCredit
 
 def runtime():
 	#path for all of them
@@ -12,8 +12,8 @@ def runtime():
 	hist_res = FHC.frame_hist_calculation(start_frame)
 	timestamp = FHC.set_timestamp(start_frame)
 	print timestamp
-	print len(hist_res)
-	return EndCredit(data=hist_res, timestamps=timestamp)
+	print hist_res
+	#return EndCredit(data=hist_res, timestamps=timestamp)
 
 if __name__ == "__main__":
 	runtime()

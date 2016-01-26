@@ -56,8 +56,8 @@ for index, name in enumerate(files):
 		final_result_list.append(sum(result_list))
 
 	ind = np.argmin(final_result_list)
-	print final_result_list[ind - 20:ind + 20]
-	print base_name, name
-	print ind, min(final_result_list)
-	print reduce(lambda x, y: x + y, final_result_list) / len(final_result_list)
+        print "The similirity result around the min: ", final_result_list[ind - 20:ind + 20]
+        print "sourcefile and test file: ", base_name, name
+        print "index and the correponding time of the starting credit: ",ind, min(final_result_list)
+        print "average of the similirity score: ",reduce(lambda x, y: x + y, final_result_list) / len(final_result_list)
 	break

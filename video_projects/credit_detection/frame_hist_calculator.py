@@ -1,15 +1,9 @@
 #-​*- coding: UTF-8 -*​-
 # coding=gbk
 
-import json
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt 
-import os
-import csv
-import time
 import pysrt
-from collections import deque
 
 class FrameHistCalculator(object):
 
@@ -59,7 +53,7 @@ class FrameHistCalculator(object):
 		return float(polarized_pixel) / total_pixel_count
 
 	def video_reader(self, video_path):
-				#read video and get video parameters
+		#read video and get video parameters
 		cap = cv2.VideoCapture(video_path.encode("utf8"))
 		self.length = int(cap.get(cv2.cv.CV_CAP_PROP_FRAME_COUNT))
 		self.fps    = cap.get(cv2.cv.CV_CAP_PROP_FPS)
