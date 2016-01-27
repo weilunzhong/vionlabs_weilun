@@ -1,5 +1,5 @@
 from frame_hist_calculator import FrameHistCalculator
-#from vionmodels.research import EndCredit
+from vionmodels.research import EndCredit
 
 def runtime():
 	#path for all of them

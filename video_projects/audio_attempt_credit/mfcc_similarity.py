@@ -5,11 +5,9 @@ import os
 
 mfcc_log_folder = "mfcc_log/12_monkey_2048/"
 
-# def similarityMfcc(array_1, array_2):
-
 
 # this function calculate the similarity between two mfcc series with the same window size
-def windowSimiliraty(base_list, income_list, window_size):
+def window_similiraty(base_list, income_list, window_size):
 	result_list =[]
 	for i in range(0, window_size):
 		income_mfcc_poped = income_list[i][1:]
@@ -33,6 +31,7 @@ with open(mfcc_log_folder + base_name +".json") as f1:
 	data_1 = json.load(f1)
 print len(data_1["lowlevel"]["mfcc"])
 
+
 files.pop(0)
 
 window_size = 20
@@ -52,8 +51,8 @@ for index, name in enumerate(files):
 		if index > 5900:
 			break
 		income_mfcc_list = data_2["lowlevel"]["mfcc"][index : index + window_size]
-		result_list = windowSimiliraty(mfcc_list, income_mfcc_list, window_size)
-		final_result_list.append(sum(result_list))
+		result_list = window_similiraty(mfcc_list, income_mfcc_list, window_size)
+		final_result_list.append(sum(result_list)
 
 	ind = np.argmin(final_result_list)
         print "The similirity result around the min: ", final_result_list[ind - 20:ind + 20]
