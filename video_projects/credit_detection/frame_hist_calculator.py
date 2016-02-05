@@ -4,6 +4,7 @@
 import cv2
 import numpy as np
 import pysrt
+from vionaux.rnd import vidioids
 
 class FrameHistCalculator(object):
 
@@ -35,7 +36,6 @@ class FrameHistCalculator(object):
     def is_credit(self, blackNwhite_ratio, credit_buffer):
         credit_buffer.append(blackNwhite_ratio)
         credit_buffer.popleft()
-        # print credit_buffer
         return credit_buffer
 
     # return a bool to when provided with a frame
@@ -97,6 +97,15 @@ class FrameHistCalculator(object):
 
         self.data_array = np.asarray(hist_res)
         return self.data_array
-
-
-
+# TODO implement only the frame hist cal and hist process function!!
+#def main():
+#    video_path = "/mnt/movies03/boxer_movies/tt3247714/Survivor (2015)/Survivor.2015.720p.BluRay.x264.YIFY.mp4"
+#    FHC = FrameHistCalculator()
+#    VHH = VionVideoHandler()
+#    frame_generator = VHH.get_frames(video_path, 1, start_time, end_time)
+#    for frame in frame_generator:
+#        frame_hist = FHC.frame_hist_calculation()
+#        
+#
+if __name__ = "__main__":
+    main()kk

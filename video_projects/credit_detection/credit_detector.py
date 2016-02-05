@@ -13,17 +13,14 @@ from collections import deque
 input_video_path ='/mnt/databucket/movie_research/videofiles2/tt0303933/Drumline (2002)/Drumline.2002.720p.BrRip.x264.YIFY.mp4'
 subtitle_path = '/mnt/databucket/movie_research/videofiles2/tt0303933/Drumline (2002)/Drumline.2002.720p.BrRip.x264.YIFY.srt'
 """
-
+"""
 input_video_path = "/mnt/movies03/boxer_movies/tt1523483/[www.tnttorrent.info] Kaboom 2010 [DVDRip.XviD-miguel] [Ekipa TnT]/Kaboom 2010 [DVDRip.XviD-miguel] [ENG].avi"
 subtitle_path = None
-
-
 """
 
 # this path is a file with yellow credit background 
 input_video_path = '/mnt/databucket/boxer_movies/tt1379182/Kynodontas.2009.PROPER.DVDRip.XviD.HORiZON-ArtSubs/Kynodontas.2009.PROPER.DVDRip.XviD.HORiZON-ArtSubs.avi'
 subtitle_path = '/mnt/databucket/boxer_movies/tt1379182/Kynodontas.2009.PROPER.DVDRip.XviD.HORiZON-ArtSubs/Kynodontas.2009.PROPER.DVDRip.XviD.HORiZON-ArtSubs.srt'
-"""
 
 
 
@@ -55,17 +52,19 @@ def transform_to_seconds(hour, minute, seconds, milliseconds):
 
 # return a bool to when provided with a frame
 def frame_hist_polarization(frame):
-	hist_numpy, bins = np.histogram(frame.ravel(),256,[0,256])
+    r, g, b = frame[:,:,0], frame[:,:,1], frame[:,:,2]
+    frame = 0.2989*r + 0.5870*g + 0.1140*b
+    hist_numpy, bins = np.histogram(frame.ravel(),256,[0,256])
 
 	# black and white approach but fail on some other colors
 	# black_pixel_count = sum(hist_numpy[0: 3])
 	# white_pixel_count = sum(hist_numpy[-3: ])
 
 	# try to find the most dominating color in hist and calculate its precentange
-	sorted_hist = np.sort(hist_numpy)
-	polarized_pixel = sum(sorted_hist[-5 :])
-	total_pixel_count = sum(hist_numpy)
-	return float(polarized_pixel) / total_pixel_count
+    sorted_hist = np.sort(hist_numpy)
+    polarized_pixel = sum(sorted_hist[-5 :])
+    total_pixel_count = sum(hist_numpy)
+    return float(polarized_pixel) / total_pixel_count
 
 def is_credit(blackNwhite_ratio, credit_buffer):
 	credit_buffer.append(blackNwhite_ratio)
