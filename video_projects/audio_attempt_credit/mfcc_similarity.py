@@ -47,16 +47,16 @@ for index, name in enumerate(files):
 	mfcc_list = data_1["lowlevel"]["mfcc"][start_frame:start_frame+window_size]
 
 	final_result_list = []
-	for index, income_mfcc in enumerate(data_2["lowlevel"]["mfcc"]):
+    for index, income_mfcc in enumerate(data_2["lowlevel"]["mfcc"]):
 		if index > 5900:
 			break
 		income_mfcc_list = data_2["lowlevel"]["mfcc"][index : index + window_size]
 		result_list = window_similiraty(mfcc_list, income_mfcc_list, window_size)
-		final_result_list.append(sum(result_list)
-
-	ind = np.argmin(final_result_list)
-        print "The similirity result around the min: ", final_result_list[ind - 20:ind + 20]
-        print "sourcefile and test file: ", base_name, name
-        print "index and the correponding time of the starting credit: ",ind, min(final_result_list)
-        print "average of the similirity score: ",reduce(lambda x, y: x + y, final_result_list) / len(final_result_list)
+		final_result_list.append(sum(result_list))
+        
+    ind = np.argmin(final_result_list)
+    print "The similirity result around the min: ", final_result_list[ind - 20:ind + 20]
+    print "sourcefile and test file: ", base_name, name
+    print "index and the correponding time of the starting credit: ",ind, min(final_result_list)
+    print "average of the similirity score: ",reduce(lambda x, y: x + y, final_result_list) / len(final_result_list)
 	break
