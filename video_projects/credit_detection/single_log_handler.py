@@ -63,6 +63,7 @@ for movieid in movies:
 	hist_result_array = np.delete(hist_result_array, 0)
 	# print hist_result_array
 	result = arraySlidingWindow(hist_result_array, 20, 0.55)
+        print "################"
 	print result, len(result)
 
 	start_credit = np.argwhere(result == 1)
@@ -70,3 +71,4 @@ for movieid in movies:
 	print start_credit, end_credit
 	start_credit_list = []
 	end_credit_list = []
+        print "################"
